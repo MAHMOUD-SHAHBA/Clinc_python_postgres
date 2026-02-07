@@ -9,7 +9,7 @@ class Clinic:
         self.root = root
         self.root.geometry("1200x650+50+20")
         self.root.resizable(False , False)
-        self.root.title(" Bayern Praxis")
+        self.root.title(" Heilpraxis")
         self.root.config(bg="#1C2541")
 
         self.create_widgets()
@@ -30,7 +30,7 @@ class Clinic:
         self.footer_sep = Frame(self.root, bg="#6faac4" , height=2)
         self.footer_sep.place(x=0 , y=650 - footer_height -2 , width=1200)
 
-        self.footer_lbl = Label(self.footer ,text="© 2026 Bayern Praxis | All Rights Reserved",
+        self.footer_lbl = Label(self.footer ,text="© 2026 Heilpraxis | All Rights Reserved",
                                  font = ("Poppins" , 11),bg="#1c2541",fg="#EAF6ff")
 
         self.footer_lbl.pack(expand= True)
