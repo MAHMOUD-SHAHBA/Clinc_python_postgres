@@ -37,7 +37,7 @@ class Clinic:
 #------------------------ Frame for the Buttons -------------------------
         btn_frame = Frame(self.root ,bd=2,relief=RIDGE,
                         bg='#1C2541' )
-        btn_frame.place(x=0 , y=77 , width=200 , height=531)
+        btn_frame.place(x=5 , y=77 , width=200 , height=531)
 
 #----------------------- Image for the above frame -----------------------
         self.menu_img = Image.open("images/1.jpg")
@@ -45,6 +45,35 @@ class Clinic:
         self.menu_img = ImageTk.PhotoImage(self.menu_img)
         lbl_img = Label(btn_frame , image=(self.menu_img))
         lbl_img.pack(side=TOP , fill = X)
+#------- Menu Label - Frame ------------------------------------
+        lbl_menu = Label(btn_frame  , text="Menu" , font=("Poppins" , 20 ) ,
+                         bg="#1C2541" , fg="white" ,relief=RIDGE)
+        lbl_menu.pack(fill= X)
+
+#------- Buttons -----------------------------------------------
+        btn1 = Button(btn_frame , text= "Rays" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn1.pack(side = TOP , fill= X)
+
+        btn2 = Button(btn_frame , text= "Booking" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn2.pack(side = TOP , fill= X)
+
+        btn3 = Button(btn_frame , text= "Branch2" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn3.pack(side = TOP , fill= X)
+
+        btn4 = Button(btn_frame , text= "Branch3" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn4.pack(side = TOP , fill= X)
+
+        btn5 = Button(btn_frame , text= "Exit" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn5.pack(side = TOP , fill= X)
+
+#------- Frame Image ----------------------------------------------
+        frame_img = Frame(self.root , bd =2 , relief=RIDGE , bg="gray")
+        frame_img.place(x= 210, y = 77 , width = 985 , height = 530)
 
     def update_datetime(self):
         now = datetime.now()
