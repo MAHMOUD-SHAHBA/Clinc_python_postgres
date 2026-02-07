@@ -47,29 +47,41 @@ class Clinic:
         lbl_img.pack(side=TOP , fill = X)
 #------- Menu Label - Frame ------------------------------------
         lbl_menu = Label(btn_frame  , text="Menu" , font=("Poppins" , 20 ) ,
-                         bg="#1C2541" , fg="white" ,relief=RIDGE)
+                         bg="#1C2541" , fg="white" ,relief=RIDGE , height=3)
         lbl_menu.pack(fill= X)
 
 #------- Buttons -----------------------------------------------
-        btn1 = Button(btn_frame , text= "Rays" , font=("Poppins" , 20),
+        btn1 = Button(btn_frame , text= "Dashboard" , font=("Poppins" , 20),
                       bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
         btn1.pack(side = TOP , fill= X)
 
-        btn2 = Button(btn_frame , text= "Booking" , font=("Poppins" , 20),
+        btn2 = Button(btn_frame , text= "Patients" , font=("Poppins" , 20),
                       bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
         btn2.pack(side = TOP , fill= X)
 
-        btn3 = Button(btn_frame , text= "Branch2" , font=("Poppins" , 20),
+        btn3 = Button(btn_frame , text= "Appointments" , font=("Poppins" , 20),
                       bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
         btn3.pack(side = TOP , fill= X)
 
-        btn4 = Button(btn_frame , text= "Branch3" , font=("Poppins" , 20),
+        btn4 = Button(btn_frame , text= "Billing" , font=("Poppins" , 20),
                       bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
         btn4.pack(side = TOP , fill= X)
 
-        btn5 = Button(btn_frame , text= "Exit" , font=("Poppins" , 20),
+        btn5 = Button(btn_frame , text= "Lab Reports" , font=("Poppins" , 20),
                       bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
         btn5.pack(side = TOP , fill= X)
+
+        btn6 = Button(btn_frame , text= "Staff" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn6.pack(side = TOP , fill= X)
+
+        btn7 = Button(btn_frame , text= "Settings" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn7.pack(side = TOP , fill= X)
+
+        btn8 = Button(btn_frame , text= "Exit" , font=("Poppins" , 20),
+                      bg="#1C2541" , fg="white" , border= 3 , cursor="hand2")
+        btn8.pack(side = TOP , fill= X)
 
 #------- Frame Image ----------------------------------------------
         frame_img = Frame(self.root , bd =2 , relief=RIDGE , bg="gray")
