@@ -52,7 +52,7 @@ class Clinic:
         time = now.strftime("%H:%M:%S")
 
         self.lbl_date.config(
-            text = f"Bayern Praxis     |     Date : {date}     |      Time : {time}"
+            text = f"Heilpraxis     |     Date : {date}     |      Time : {time}"
 
         )
         self.lbl_date.after(1000 ,self.update_datetime)
