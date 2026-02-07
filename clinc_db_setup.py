@@ -84,3 +84,57 @@ cr.execute("""
 
 
 #-------   Appointments -----------------
+cr.execute("""
+    CREATE TABLE IF NOT EXISTS appointments (
+        appointment_id SERIAL PRIMARY KEY ,
+        patient_id INT NOT NULL REFERENCES patients(patient_id) ON DELETE CASCADE,
+        doctor_id INT NOT NULL REFERENCES staff(staff_id) ON DELETE CASCADE ,
+        appointment_date DATE NOT NULL,
+        appointment_time TIME NOT NULL ,
+        status VARCHAR(20) DEFAULT 'Scheduled', -- Scheduled , Completed ,Cancelled
+        notes TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
+""")
+
+#------- Billing Table  --------------------------
+cr.execute("""
+    CREATE TABLE IF NOT EXISTS billig(
+        bill_id SERIAL pRIMARY KEY ,
+        appointment_id INT NOT NULL REFERENCES patients(patient_id) ON DELETE CASCADE ,
+        amount DECIMAL(10,2) NOT NULL ,
+        payment_status VARCHAR(50) DEFAULT 'Pending', -- Paid , Pending
+        payment_method VARCHAR(50), -- Cash , Card , Insurance
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
+""")
+
+#-------  Lab Reports Table ------------------
+cr.execute("""
+    CREATE TABLE IF NOT EXISTS lab_reports(
+        report_id SERIAL PRIMARY KEY,
+        patient_id INT NOT NULL REFERENCES patients(patient_id) ON DELETE CASCADE,
+        doctor_id INT REFERENCES staff(staff_id),
+        test_name VARCHAR(100) NOT NULL,
+        test_date DATE NOT NULL ,
+        result TEXT,
+        notes TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+""")
+
+#-------    Settings Table ------------------------------
+cr.execute("""
+    CREATE TABLE IF NOT EXISTS settings(
+        setting_id SERIAL PRIMARY KEY ,
+        clinic_name VARCHAR(100) Default 'Heilpraxis',
+        address TEXT ,
+        phone VARCHAR(20),
+        email VARCHAR(100),
+        working_hours VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
+""")
+
+print("All tables created successfully.")
+
+#-------      Close Connection -----------
+cr.close()
+conn.close()
+print("Database connection closed")
